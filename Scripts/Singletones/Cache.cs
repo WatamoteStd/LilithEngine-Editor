@@ -1,0 +1,25 @@
+using Godot;
+using System;
+
+public partial class Cache : Node
+{
+	
+	public static Cache Instance {get; private set;}
+	public string WorkPath;
+
+	public override void _Ready()
+	{
+		
+		if (Instance != null)
+		{
+			QueueFree();
+			return;
+		}
+		Instance = this;
+
+
+
+	}
+
+
+}

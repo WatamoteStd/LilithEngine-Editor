@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://lq6187k1xn0t"]
+
+[ext_resource type="Script" uid="uid://cd8epjaopq51j" path="res://Scripts/MatchmakerWindow.cs" id="1_dq43k"]
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_xiphy"]
+[ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="2_275ln"]
+[ext_resource type="FontFile" uid="uid://obsv35xo0cxy" path="res://Assets/Fonts/FiraCode-Bold.ttf" id="3_dq43k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+bg_color = Color(0.16876125, 0.15656361, 0.10253603, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+bg_color = Color(0.105882354, 0.09803922, 0.05882353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21495584, 0.25610825, 0.13730475, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt6yn"]
+bg_color = Color(0.07793202, 0.072593935, 0.040576577, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.20362008, 0.19112262, 0.1286067, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_275ln"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.3510353, 0.3551179, 0.37860158, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq43k"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.30588233, 0.30943897, 0.3308035, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghlo8"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.39511603, 0.39931768, 0.42449346, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[node name="MatchmakerWindow" type="PanelContainer" unique_id=1095733168 node_paths=PackedStringArray("_saveButton", "_poolUpscale", "_mmrUpscale", "_mmrDiapasone", "_limited")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("1_dq43k")
+_saveButton = NodePath("Save")
+_poolUpscale = NodePath("VBoxContainer/Content/Container/PoolScaleTime/ScaleTime")
+_mmrUpscale = NodePath("VBoxContainer/Content/Container/MMR/Diapasone")
+_mmrDiapasone = NodePath("VBoxContainer/Content/Container/MMR_DIAPASONE/Diapasone")
+_limited = NodePath("VBoxContainer/Content/Container/Limited/CheckBox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=432537818]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="VBoxContainer" unique_id=1007222219]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Title" unique_id=552659972]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8665462, 0.86655676, 0.877109, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_xiphy")
+theme_override_font_sizes/font_size = 34
+text = "LILITH ENGINE EDITOR"
+
+[node name="Title2" type="Label" parent="VBoxContainer/Title" unique_id=1414424686]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.5547279, 0.5460517, 0.52434534, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_xiphy")
+theme_override_font_sizes/font_size = 34
+text = "MATCHMAKER"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=75726063]
+layout_mode = 2
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=1199471439]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 15
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/Content" unique_id=130995964]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PoolScaleTime" type="HBoxContainer" parent="VBoxContainer/Content/Container" unique_id=405066727]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/Container/PoolScaleTime" unique_id=736481342]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7759021, 0.79706883, 0.8145089, 1)
+theme_override_fonts/font = ExtResource("2_275ln")
+theme_override_font_sizes/font_size = 24
+text = "POOL UPSCALE TIME"
+
+[node name="ScaleTime" type="LineEdit" parent="VBoxContainer/Content/Container/PoolScaleTime" unique_id=465919327]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8732979, 0.8732986, 0.87329817, 1)
+theme_override_fonts/font = ExtResource("3_dq43k")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pt6yn")
+placeholder_text = "ms"
+alignment = 1
+max_length = 10
+
+[node name="MMR" type="HBoxContainer" parent="VBoxContainer/Content/Container" unique_id=2039444409]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/Container/MMR" unique_id=2137386719]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7759021, 0.79706883, 0.8145089, 1)
+theme_override_fonts/font = ExtResource("2_275ln")
+theme_override_font_sizes/font_size = 24
+text = "MMR UPSCALE"
+
+[node name="Diapasone" type="LineEdit" parent="VBoxContainer/Content/Container/MMR" unique_id=996313077]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8732979, 0.8732986, 0.87329817, 1)
+theme_override_fonts/font = ExtResource("3_dq43k")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pt6yn")
+placeholder_text = "count"
+alignment = 1
+max_length = 10
+
+[node name="MMR_DIAPASONE" type="HBoxContainer" parent="VBoxContainer/Content/Container" unique_id=2123174532]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/Container/MMR_DIAPASONE" unique_id=1226854526]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7759021, 0.79706883, 0.8145089, 1)
+theme_override_fonts/font = ExtResource("2_275ln")
+theme_override_font_sizes/font_size = 24
+text = "MMR DIAPASONE"
+
+[node name="Diapasone" type="LineEdit" parent="VBoxContainer/Content/Container/MMR_DIAPASONE" unique_id=1365360689]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8732979, 0.8732986, 0.87329817, 1)
+theme_override_fonts/font = ExtResource("3_dq43k")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pt6yn")
+placeholder_text = "count"
+alignment = 1
+max_length = 10
+
+[node name="Limited" type="HBoxContainer" parent="VBoxContainer/Content/Container" unique_id=1218365683]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/Container/Limited" unique_id=320663475]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7759021, 0.79706883, 0.8145089, 1)
+theme_override_fonts/font = ExtResource("2_275ln")
+theme_override_font_sizes/font_size = 24
+text = "LIMITED"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/Content/Container/Limited" unique_id=1347260750]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+
+[node name="Save" type="Button" parent="." unique_id=1896220704]
+custom_minimum_size = Vector2(270, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.7990741, 0.79907465, 0.7990742, 1)
+theme_override_fonts/font = ExtResource("1_xiphy")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_275ln")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dq43k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ghlo8")
+text = "SAVE"

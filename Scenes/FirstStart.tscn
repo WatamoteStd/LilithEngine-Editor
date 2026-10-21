@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://be1byqc8qvjbp"]
+
+[ext_resource type="Script" uid="uid://bevvg00ik0muk" path="res://Scripts/FirstInit/FirstStart.cs" id="1_4a3ro"]
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_en517"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+bg_color = Color(0.13297486, 0.12444084, 0.12938824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.22636256, 0.274143, 0.35036814, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dopb"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.18073955, 0.22062403, 0.28378406, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eansi"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.25737873, 0.30874747, 0.3900722, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[node name="FirstInit" type="PanelContainer" unique_id=190634973 node_paths=PackedStringArray("_fileDialog", "_selectDirectButton")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("1_4a3ro")
+_fileDialog = NodePath("CenterContainer/FileDialog")
+_selectDirectButton = NodePath("CenterContainer/HBoxContainer/Button")
+
+[node name="Title" type="Label" parent="." unique_id=2056576904]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8593546, 0.8763926, 0.8890742, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_en517")
+theme_override_font_sizes/font_size = 41
+text = "LILITH ENGINE EDITOR"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=422527851]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FileDialog" type="FileDialog" parent="CenterContainer" unique_id=2122835360]
+oversampling_override = 1.0
+title = "Select Defaulth Directory"
+initial_position = 1
+size = Vector2i(840, 400)
+wrap_controls = false
+unresizable = true
+theme_override_colors/folder_icon_color = Color(0.8160996, 0.8160996, 0.8160996, 1)
+file_mode = 2
+display_mode = 1
+access = 2
+use_native_dialog = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=804643155]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="CenterContainer/HBoxContainer" unique_id=1661625475]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8593546, 0.8763926, 0.8890742, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_en517")
+theme_override_font_sizes/font_size = 23
+text = "DEFAUTLH DIRECTORY"
+
+[node name="Button" type="Button" parent="CenterContainer/HBoxContainer" unique_id=1310640190]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7990741, 0.79907465, 0.7990742, 1)
+theme_override_fonts/font = ExtResource("1_en517")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3dopb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eansi")
+text = "SELECT"
