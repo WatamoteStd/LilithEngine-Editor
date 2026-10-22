@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://bywojbme2djrx"]
+
+[ext_resource type="Script" uid="uid://dt2njph2b358i" path="res://Scenes/Windows/Heroes/Modules/HeroListGeneral.cs" id="1_wqbej"]
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="2_d6ggx"]
+[ext_resource type="FontFile" uid="uid://ha0pyjwvwwhv" path="res://Assets/Fonts/FiraCode-Light.ttf" id="3_km354"]
+[ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="4_n0n12"]
+[ext_resource type="Script" uid="uid://gddkineisuan" path="res://Scripts/Utils/AwarnessLineEdit.cs" id="5_d6ggx"]
+[ext_resource type="Script" uid="uid://b8vmlt2k24pjy" path="res://Scenes/Windows/Heroes/Modules/ModelSizeAdvensed.cs" id="5_km354"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2509804, 0.30980393, 0.39607844, 0.5803922)
+border_color = Color(0.2353374, 0.3768562, 0.5457457, 1)
+border_blend = true
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urodu"]
+bg_color = Color(0.14509805, 0.17254902, 0.21568628, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38044122, 0.38044125, 0.380441, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q76wn"]
+bg_color = Color(0.11496944, 0.13841161, 0.17525041, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5009605, 0.5392969, 0.5968054, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ggx"]
+bg_color = Color(0.3680205, 0.45968175, 0.5784621, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2330125, 0.30076134, 0.39309984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km354"]
+bg_color = Color(0.32316968, 0.40696847, 0.5212267, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2330125, 0.30076134, 0.39309984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0n12"]
+bg_color = Color(0.39784488, 0.49052107, 0.6154672, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4465083, 0.5445414, 0.67016596, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.105882354, 0.12941177, 0.16078432, 1)
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.3919787, 0.5210034, 0.62861705, 1)
+border_blend = true
+
+[node name="HeroiList_General" type="PanelContainer" unique_id=22522576 node_paths=PackedStringArray("_modelSizeTab", "_modelPrefab")]
+custom_minimum_size = Vector2(350, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("1_wqbej")
+_modelSizeTab = NodePath("VBoxContainer/ModelSizeAdvensed")
+_modelPrefab = NodePath("VBoxContainer/ModelSize/HeroesList")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1116479023]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="VBoxContainer" parent="VBoxContainer" unique_id=944241482]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Header" unique_id=576048905]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8672191, 0.9011346, 0.93940043, 1)
+theme_override_fonts/font = ExtResource("2_d6ggx")
+theme_override_font_sizes/font_size = 21
+text = "GENERAL"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Header" unique_id=231804206]
+layout_mode = 2
+
+[node name="ServerName" type="HBoxContainer" parent="VBoxContainer" unique_id=2129289132]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/ServerName" unique_id=431265777]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 18
+text = "Server ID"
+horizontal_alignment = 1
+
+[node name="ServerId" type="LineEdit" parent="VBoxContainer/ServerName" unique_id=307167444]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n0n12")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 24
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer" unique_id=1357066383]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="Title" type="Label" parent="VBoxContainer/Name" unique_id=999865752]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 18
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Name" type="LineEdit" parent="VBoxContainer/Name" unique_id=1200521352]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n0n12")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 24
+
+[node name="ModelSize" type="HBoxContainer" parent="VBoxContainer" unique_id=1645268741]
+layout_mode = 2
+theme_override_constants/separation = 47
+
+[node name="Title" type="Label" parent="VBoxContainer/ModelSize" unique_id=1155995635]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 15
+text = "Radius"
+horizontal_alignment = 1
+
+[node name="HeroesList" type="OptionButton" parent="VBoxContainer/ModelSize" unique_id=1207838223]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_d6ggx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km354")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0n12")
+alignment = 1
+item_count = 5
+popup/item_0/text = "Custom"
+popup/item_0/id = 0
+popup/item_1/text = "Small"
+popup/item_1/id = 1
+popup/item_2/text = "Normal"
+popup/item_2/id = 2
+popup/item_3/text = "Big"
+popup/item_3/id = 3
+popup/item_4/text = "Huge"
+popup/item_4/id = 4
+
+[node name="ModelSizeAdvensed" type="PanelContainer" parent="VBoxContainer" unique_id=1846092719 node_paths=PackedStringArray("_radiusEdit", "_heightEdit")]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u82b")
+script = ExtResource("5_km354")
+_radiusEdit = NodePath("VBoxContainer/ModelRad/SizeR")
+_heightEdit = NodePath("VBoxContainer/ModelHei/SizeH")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ModelSizeAdvensed" unique_id=1866948949]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="VBoxContainer" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=476264181]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=175661385]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.57002485, 0.6276293, 0.7046362, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 14
+text = "Advanced Model Options"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=821622118]
+layout_mode = 2
+
+[node name="ModelRad" type="HBoxContainer" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=870277957 node_paths=PackedStringArray("_lineEdit", "_label")]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("5_d6ggx")
+_lineEdit = NodePath("SizeR")
+_label = NodePath("hint")
+_hintShowValue = 1
+_warningShowValue = 3
+_criticalShowValue = 6
+_warningMessage = "May make some troubles"
+
+[node name="Title" type="Label" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=668212355]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 12
+text = "Radius (F)"
+horizontal_alignment = 1
+
+[node name="SizeR" type="LineEdit" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=1103282129]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n0n12")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 3
+
+[node name="hint" type="Label" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=2023485984]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="ModelHei" type="HBoxContainer" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=1421650990 node_paths=PackedStringArray("_lineEdit", "_label")]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("5_d6ggx")
+_lineEdit = NodePath("SizeH")
+_label = NodePath("hint")
+_hintShowValue = 1
+_warningShowValue = 3
+_criticalShowValue = 6
+_warningMessage = "May make some troubles"
+
+[node name="Title" type="Label" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1130687324]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 12
+text = "Height (F)"
+horizontal_alignment = 1
+
+[node name="SizeH" type="LineEdit" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1615405600]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_n0n12")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 3
+
+[node name="hint" type="Label" parent="VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=592215464]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_km354")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1

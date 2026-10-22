@@ -1,0 +1,461 @@
+[gd_scene format=3 uid="uid://buo3y4rnxce8e"]
+
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_cylwj"]
+[ext_resource type="FontFile" uid="uid://ha0pyjwvwwhv" path="res://Assets/Fonts/FiraCode-Light.ttf" id="2_m1l2r"]
+[ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="3_r4y5p"]
+[ext_resource type="Theme" uid="uid://bltki6hck13wx" path="res://Assets/Styles/MainTheme.tres" id="4_m1l2r"]
+[ext_resource type="Script" uid="uid://gddkineisuan" path="res://Scripts/Utils/AwarnessLineEdit.cs" id="4_tou5w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2509804, 0.30980393, 0.39607844, 0.5803922)
+border_color = Color(0.2353374, 0.3768562, 0.5457457, 1)
+border_blend = true
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urodu"]
+bg_color = Color(0.14509805, 0.17254902, 0.21568628, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38044122, 0.38044125, 0.380441, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q76wn"]
+bg_color = Color(0.11496944, 0.13841161, 0.17525041, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5009605, 0.5392969, 0.5968054, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ggx"]
+bg_color = Color(0.3680205, 0.45968175, 0.5784621, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2330125, 0.30076134, 0.39309984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km354"]
+bg_color = Color(0.32316968, 0.40696847, 0.5212267, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2330125, 0.30076134, 0.39309984, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0n12"]
+bg_color = Color(0.39784488, 0.49052107, 0.6154672, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4465083, 0.5445414, 0.67016596, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.105882354, 0.12941177, 0.16078432, 1)
+border_width_top = 1
+border_width_right = 1
+border_color = Color(0.3919787, 0.5210034, 0.62861705, 1)
+border_blend = true
+
+[node name="HeroiList_Stats" type="PanelContainer" unique_id=22522576]
+custom_minimum_size = Vector2(350, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -250.0
+offset_right = 175.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=936398762]
+layout_mode = 2
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1116479023]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Header" type="VBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=944241482]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Header" unique_id=576048905]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7482267, 0.20453358, 0, 1)
+theme_override_fonts/font = ExtResource("1_cylwj")
+theme_override_font_sizes/font_size = 21
+text = "BATTLE STATS"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/Header" unique_id=231804206]
+layout_mode = 2
+
+[node name="Health" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1357066383]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Health" unique_id=999865752]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Health"
+horizontal_alignment = 1
+
+[node name="Health" type="LineEdit" parent="ScrollContainer/VBoxContainer/Health" unique_id=1200521352]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="Mana" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=776696462]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Mana" unique_id=44432203]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Mana"
+horizontal_alignment = 1
+
+[node name="mana" type="LineEdit" parent="ScrollContainer/VBoxContainer/Mana" unique_id=2089398985]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="HealthRegen" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1941465003]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/HealthRegen" unique_id=1970704561]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Health Regeneration"
+horizontal_alignment = 1
+
+[node name="HealthRegen" type="LineEdit" parent="ScrollContainer/VBoxContainer/HealthRegen" unique_id=1220041785]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="ManaRegen" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1153456496]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ManaRegen" unique_id=859776823]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Mana Regeneration"
+horizontal_alignment = 1
+
+[node name="manaRegen" type="LineEdit" parent="ScrollContainer/VBoxContainer/ManaRegen" unique_id=621173160]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="Armor" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1058545767]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Armor" unique_id=950081425]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Armor"
+horizontal_alignment = 1
+
+[node name="Armor" type="LineEdit" parent="ScrollContainer/VBoxContainer/Armor" unique_id=1722489342]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="MoveSpeed" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=439339632]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/MoveSpeed" unique_id=1755405072]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Move Speed"
+horizontal_alignment = 1
+
+[node name="MoveSpeed" type="LineEdit" parent="ScrollContainer/VBoxContainer/MoveSpeed" unique_id=1548422657]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="Damage" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=800832757]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Damage" unique_id=1247307312]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Damage"
+horizontal_alignment = 1
+
+[node name="Damage" type="LineEdit" parent="ScrollContainer/VBoxContainer/Damage" unique_id=231377562]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="AttackSpeed" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1753443333]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/AttackSpeed" unique_id=564626436]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Basic Attack Time (BAT)"
+horizontal_alignment = 1
+
+[node name="AttackSpeed" type="LineEdit" parent="ScrollContainer/VBoxContainer/AttackSpeed" unique_id=2002826752]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="AttackRange" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=199428001]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/AttackRange" unique_id=1556955073]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Attack Range"
+horizontal_alignment = 1
+
+[node name="AttackRange" type="LineEdit" parent="ScrollContainer/VBoxContainer/AttackRange" unique_id=1564612588]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 10
+
+[node name="AttackType" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1645268741]
+layout_mode = 2
+theme_override_constants/separation = 47
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/AttackType" unique_id=1155995635]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "Attack Type"
+horizontal_alignment = 1
+
+[node name="AttackType" type="OptionButton" parent="ScrollContainer/VBoxContainer/AttackType" unique_id=1207838223]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_d6ggx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_km354")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0n12")
+alignment = 1
+item_count = 2
+popup/item_0/text = "Melee"
+popup/item_0/id = 0
+popup/item_1/text = "Ranged"
+popup/item_1/id = 1
+
+[node name="IsEnabled" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1572793136]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/IsEnabled" unique_id=761407188]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 15
+text = "In Build"
+horizontal_alignment = 1
+
+[node name="LeakDrop" type="CheckBox" parent="ScrollContainer/VBoxContainer/IsEnabled" unique_id=563578782]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("4_m1l2r")
+
+[node name="ModelSizeAdvensed" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1846092719]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u82b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed" unique_id=1866948949]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=476264181]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=175661385]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.57002485, 0.6276293, 0.7046362, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 14
+text = "Advanced Model Options"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=821622118]
+layout_mode = 2
+
+[node name="ModelRad" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=870277957 node_paths=PackedStringArray("_lineEdit", "_label")]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("4_tou5w")
+_lineEdit = NodePath("SizeR")
+_label = NodePath("hint")
+_hintShowValue = 1
+_warningShowValue = 3
+_criticalShowValue = 6
+_warningMessage = "May make some troubles"
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=668212355]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 12
+text = "Radius (F)"
+horizontal_alignment = 1
+
+[node name="SizeR" type="LineEdit" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=1103282129]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 3
+
+[node name="hint" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=2023485984]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="ModelHei" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=1421650990 node_paths=PackedStringArray("_lineEdit", "_label")]
+layout_mode = 2
+theme_override_constants/separation = 10
+script = ExtResource("4_tou5w")
+_lineEdit = NodePath("SizeH")
+_label = NodePath("hint")
+_hintShowValue = 1
+_warningShowValue = 3
+_criticalShowValue = 6
+_warningMessage = "May make some troubles"
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1130687324]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 12
+text = "Height (F)"
+horizontal_alignment = 1
+
+[node name="SizeH" type="LineEdit" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1615405600]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r4y5p")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
+alignment = 1
+max_length = 3
+
+[node name="hint" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=592215464]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m1l2r")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1

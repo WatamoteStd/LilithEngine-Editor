@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://nfet4e2goecv" path="res://Scenes/Windows/Heroes/HeroesWindow.cs" id="1_vll73"]
 [ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="2_2r61r"]
 [ext_resource type="VideoStream" uid="uid://c0krp5fkbq1xb" path="res://Assets/Video/HeroesWindow/2cfcd73cb2de4ab3c798883256ca0335_720w.ogv" id="2_tnsp0"]
+[ext_resource type="PackedScene" uid="uid://bywojbme2djrx" path="res://Scenes/Windows/Heroes/Modules/HeroList_General.tscn" id="4_g8qcf"]
+[ext_resource type="PackedScene" uid="uid://buo3y4rnxce8e" path="res://Scenes/Windows/Heroes/Modules/HeroListStats.tscn" id="5_yqy68"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
 content_margin_left = 5.0
@@ -119,7 +121,7 @@ theme_override_fonts/font = ExtResource("2_2r61r")
 theme_override_font_sizes/font_size = 16
 text = "CURRENT HERO"
 
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Header/Content/CurHero" unique_id=451942649]
+[node name="HeroesList" type="OptionButton" parent="VBoxContainer/Header/Content/CurHero" unique_id=451942649]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
@@ -134,3 +136,21 @@ popup/item_1/text = "Hero 1"
 popup/item_1/id = 0
 popup/item_2/text = "Hero 2"
 popup/item_2/id = 1
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=1671325864]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="HBoxContainer" parent="VBoxContainer/Content" unique_id=734903195]
+layout_mode = 2
+theme_override_constants/separation = 55
+
+[node name="HeroiList_General" parent="VBoxContainer/Content/Container" unique_id=22522576 instance=ExtResource("4_g8qcf")]
+layout_mode = 2
+
+[node name="HeroiList_Stats" parent="VBoxContainer/Content/Container" unique_id=780213827 instance=ExtResource("5_yqy68")]
+layout_mode = 2
