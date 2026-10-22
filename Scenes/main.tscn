@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://be1byqc8qvjbp" path="res://Scenes/Windows/FirstStart.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cn1gy5cvylefi" path="res://Scripts/ConfigurationSerializer.cs" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://lq6187k1xn0t" path="res://Scenes/Windows/matchmakerWindow.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cqbr8bcklkwxp" path="res://Scenes/Windows/SelectWindowTab.tscn" id="5_6bp64"]
+[ext_resource type="Texture2D" uid="uid://cgjxndrmwmk8q" path="res://Assets/Icons/MenuIcon.png" id="5_21xkr"]
 [ext_resource type="PackedScene" uid="uid://drfbcyh1b8gxx" path="res://Scenes/Windows/OrchestratorWindow.tscn" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://cwsyxy3bp3gkk" path="res://Assets/Icons/MenuIcon_Hover.png" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://dj67wks17v2dt" path="res://Assets/Icons/MenuIcon_Pressed.png" id="7_ynf5e"]
 
-[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_serializer")]
+[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_menuButton", "_selectWindowTab", "_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_serializer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bo1nx")
+_menuButton = NodePath("OpenMenu")
+_selectWindowTab = NodePath("SelectWindowTab")
 _startWindow = NodePath("FirstInit")
 _matchamkerWindow = NodePath("MatchmakerWindow")
 _orchestratorWindow = NodePath("OrchestratorWindow")
@@ -23,12 +29,43 @@ _serializer = NodePath("ConfigSaver")
 script = ExtResource("2_jjvhh")
 
 [node name="MatchmakerWindow" parent="." unique_id=1095733168 instance=ExtResource("3_8gbba")]
-layout_mode = 1
-
-[node name="FirstInit" parent="." unique_id=190634973 instance=ExtResource("1_jjgbg")]
 visible = false
 layout_mode = 1
 
 [node name="OrchestratorWindow" parent="." unique_id=2008096676 instance=ExtResource("5_kry3j")]
+layout_mode = 1
+
+[node name="SelectWindowTab" parent="." unique_id=1140636163 instance=ExtResource("5_6bp64")]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_top = -100.0
+offset_right = 0.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[node name="OpenMenu" type="TextureButton" parent="." unique_id=2057701176]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_21xkr")
+texture_pressed = ExtResource("7_ynf5e")
+texture_hover = ExtResource("7_344ge")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="FirstInit" parent="." unique_id=190634973 instance=ExtResource("1_jjgbg")]
 visible = false
 layout_mode = 1

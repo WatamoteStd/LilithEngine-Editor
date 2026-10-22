@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-public partial class MatchmakerWindow : PanelContainer
+public partial class MatchmakerWindow : PanelContainer, IEngineWindow
 {
 
 	public event Action<MatchmakerSettingsStruct> OnSaveToJson;
@@ -30,6 +30,15 @@ public partial class MatchmakerWindow : PanelContainer
 		var config = new MatchmakerSettingsStruct(poolUpscaleTime, mmrUpscale, mmrDiapasone, isLimited);
 		OnSaveToJson?.Invoke(config);
 
+	}
+
+	public void ShowWindow()
+	{
+		Visible = true;
+	}
+	public void HideWindow()
+	{
+		Visible = false;
 	}
 
 

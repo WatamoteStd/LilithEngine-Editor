@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class OrchestratorWindow : PanelContainer
+public partial class OrchestratorWindow : PanelContainer, IEngineWindow
 {
 
 	public event Action<OrchestratorSettingsStruct> OnSaveToJson;
@@ -25,6 +25,15 @@ public partial class OrchestratorWindow : PanelContainer
 		
 		OrchestratorSettingsStruct settings = new OrchestratorSettingsStruct(count, startPort, _memoryLeakDrop.ToggleMode);
 		OnSaveToJson?.Invoke(settings);
+	}
+
+	public void ShowWindow()
+	{
+		Visible = true;
+	}
+	public void HideWindow()
+	{
+		Visible = false;
 	}
 
 
