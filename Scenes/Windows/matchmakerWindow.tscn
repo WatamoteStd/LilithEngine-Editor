@@ -170,7 +170,6 @@ theme_override_fonts/font = ExtResource("3_dq43k")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pt6yn")
-placeholder_text = "count"
 alignment = 1
 max_length = 10
 
@@ -195,7 +194,6 @@ theme_override_fonts/font = ExtResource("3_dq43k")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pt6yn")
-placeholder_text = "count"
 alignment = 1
 max_length = 10
 
