@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="2_aoc66"]
 [ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="3_p4ep8"]
 [ext_resource type="Script" uid="uid://gddkineisuan" path="res://Scripts/Utils/AwarnessLineEdit.cs" id="4_sfcjd"]
+[ext_resource type="Theme" uid="uid://bltki6hck13wx" path="res://Assets/Styles/MainTheme.tres" id="5_ct2a6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
 bg_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
@@ -26,7 +27,49 @@ border_width_bottom = 2
 border_color = Color(0.31954694, 0.34713534, 0.39539152, 1)
 border_blend = true
 
-[node name="OrchestratorWindow" type="PanelContainer" unique_id=2008096676]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct2a6"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.3510353, 0.3551179, 0.37860158, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gepj0"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.30588233, 0.30943897, 0.3308035, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxo5o"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.39511603, 0.39931768, 0.42449346, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[node name="OrchestratorWindow" type="PanelContainer" unique_id=2008096676 node_paths=PackedStringArray("_portsCount", "_startPort", "_memoryLeakDrop", "_saveChanges")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,6 +77,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
 script = ExtResource("1_a28vh")
+_portsCount = NodePath("VBoxContainer/Content/VBoxContainer/ServerCount/HBoxContainer/LineEditUtil/Ports")
+_startPort = NodePath("VBoxContainer/Content/VBoxContainer/StartPort/HBoxContainer/StartPort")
+_memoryLeakDrop = NodePath("VBoxContainer/Content/VBoxContainer/MemoryLeak/HBoxContainer/LeakDrop")
+_saveChanges = NodePath("Save")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1520808428]
 layout_mode = 2
@@ -73,6 +120,7 @@ theme_override_constants/margin_right = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content" unique_id=356560800]
 layout_mode = 2
+theme_override_constants/separation = 25
 
 [node name="ServerCount" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" unique_id=667634533]
 layout_mode = 2
@@ -119,3 +167,69 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_p4ep8")
 theme_override_font_sizes/font_size = 14
+
+[node name="StartPort" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" unique_id=852038180]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer/StartPort" unique_id=119463425]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/VBoxContainer/StartPort/HBoxContainer" unique_id=874692047]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9084604, 0.9272516, 0.9568545, 1)
+theme_override_fonts/font = ExtResource("3_p4ep8")
+theme_override_font_sizes/font_size = 24
+text = "Start Port"
+
+[node name="StartPort" type="LineEdit" parent="VBoxContainer/Content/VBoxContainer/StartPort/HBoxContainer" unique_id=419231691]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sfcjd")
+alignment = 1
+max_length = 5
+
+[node name="MemoryLeak" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" unique_id=1798607400]
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBoxContainer/Content/VBoxContainer/MemoryLeak" unique_id=770786292]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.33187622, 0.39523008, 0.5277317, 1)
+theme_override_fonts/font = ExtResource("3_p4ep8")
+theme_override_font_sizes/font_size = 14
+text = "(RECOMMENDED ONLY FOR DEBUG. Drop server with memory leak)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer/MemoryLeak" unique_id=43185719]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/VBoxContainer/MemoryLeak/HBoxContainer" unique_id=467156191]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9084604, 0.9272516, 0.9568545, 1)
+theme_override_fonts/font = ExtResource("3_p4ep8")
+theme_override_font_sizes/font_size = 24
+text = "Memory Leak Drop"
+
+[node name="LeakDrop" type="CheckBox" parent="VBoxContainer/Content/VBoxContainer/MemoryLeak/HBoxContainer" unique_id=1793581783]
+layout_mode = 2
+theme = ExtResource("5_ct2a6")
+
+[node name="Save" type="Button" parent="." unique_id=390868618]
+custom_minimum_size = Vector2(270, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.7990741, 0.79907465, 0.7990742, 1)
+theme_override_fonts/font = ExtResource("2_aoc66")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ct2a6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gepj0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qxo5o")
+text = "SAVE"

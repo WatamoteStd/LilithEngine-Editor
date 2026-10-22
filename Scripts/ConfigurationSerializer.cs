@@ -25,7 +25,7 @@ public partial class ConfigurationSerializer : Node
 		GD.Print($"[ConfigurationSerializer] Matchmaker settings saved.");
 	}
 
-	public void SaveChanged(OrchestratorSettingsStruct config)
+	public void SaveChanges(OrchestratorSettingsStruct config)
 	{
 		
 		var settings = new JsonSerializerOptions { WriteIndented = true };

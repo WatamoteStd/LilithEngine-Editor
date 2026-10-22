@@ -6,6 +6,7 @@ public partial class Main : Control
 	
 	[Export] private FirstStart _startWindow;
 	[Export] private MatchmakerWindow _matchamkerWindow;
+	[Export] private OrchestratorWindow _orchestratorWindow;
 	[Export] private ConfigurationSerializer _serializer;
 
 	public override void _Ready()
@@ -15,6 +16,7 @@ public partial class Main : Control
 		_startWindow.OnPathSaved += () => _startWindow.Visible = false;
 
 		_matchamkerWindow.OnSaveToJson += _serializer.SaveChanges;
+		_orchestratorWindow.OnSaveToJson += _serializer.SaveChanges;
 
 	}
 

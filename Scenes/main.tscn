@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://be1byqc8qvjbp" path="res://Scenes/Windows/FirstStart.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://cn1gy5cvylefi" path="res://Scripts/ConfigurationSerializer.cs" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://lq6187k1xn0t" path="res://Scenes/Windows/matchmakerWindow.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://drfbcyh1b8gxx" path="res://Scenes/Windows/OrchestratorWindow.tscn" id="5_kry3j"]
 
-[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_startWindow", "_matchamkerWindow", "_serializer")]
+[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_serializer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_bo1nx")
 _startWindow = NodePath("FirstInit")
 _matchamkerWindow = NodePath("MatchmakerWindow")
+_orchestratorWindow = NodePath("OrchestratorWindow")
 _serializer = NodePath("ConfigSaver")
 
 [node name="ConfigSaver" type="Node" parent="." unique_id=1954809182]
@@ -24,5 +26,9 @@ script = ExtResource("2_jjvhh")
 layout_mode = 1
 
 [node name="FirstInit" parent="." unique_id=190634973 instance=ExtResource("1_jjgbg")]
+visible = false
+layout_mode = 1
+
+[node name="OrchestratorWindow" parent="." unique_id=2008096676 instance=ExtResource("5_kry3j")]
 visible = false
 layout_mode = 1

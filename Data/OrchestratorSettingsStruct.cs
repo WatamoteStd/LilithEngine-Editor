@@ -1,6 +1,8 @@
-using Godot;
+
 using System;
 
-public partial class OrchestratorSettingsStruct : Node
-{
-}
+public record struct OrchestratorSettingsStruct(
+	int PortCount,
+	int StartPort,
+	bool MemoryLeakDrop
+);
