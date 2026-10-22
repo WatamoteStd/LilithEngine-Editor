@@ -27,7 +27,7 @@ content_margin_bottom = 5.0
 bg_color = Color(0.159819, 0.27728572, 0.35129455, 1)
 shadow_size = 2
 
-[node name="SelectWindowTab" type="PanelContainer" unique_id=1140636163 node_paths=PackedStringArray("_orchestrator", "_matchmaker")]
+[node name="SelectWindowTab" type="PanelContainer" unique_id=1140636163 node_paths=PackedStringArray("_orchestrator", "_matchmaker", "_heroes")]
 custom_minimum_size = Vector2(450, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,6 +43,7 @@ grow_vertical = 2
 script = ExtResource("1_3t3q1")
 _orchestrator = NodePath("HBoxContainer/VBoxContainer/Orchestrator")
 _matchmaker = NodePath("HBoxContainer/VBoxContainer/Matchmaker")
+_heroes = NodePath("HBoxContainer/Heroes")
 
 [node name="Title" type="Label" parent="." unique_id=358635761]
 layout_mode = 2
@@ -61,7 +62,9 @@ size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=996288838]
 layout_mode = 2
-theme_override_constants/separation = 10
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
 
 [node name="Orchestrator" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=87490149]
 layout_mode = 2
@@ -78,3 +81,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_83fg3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ihb6n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qwcmd")
 text = "MATCHMAKER"
+
+[node name="Heroes" type="Button" parent="HBoxContainer" unique_id=482366280]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r3j88")
+theme_override_styles/normal = SubResource("StyleBoxFlat_83fg3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ihb6n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qwcmd")
+text = "HEROES"

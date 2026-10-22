@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public partial class Main : Control
 {
 	
-	public enum EngineWindow : byte { Matchmaker, Orchestrator };
+	public enum EngineWindow : byte { Matchmaker, Orchestrator, Heroes};
 	public EngineWindow CurrentWindow;
 	private bool _isMenuOpen = false;
 
@@ -16,6 +16,7 @@ public partial class Main : Control
 	[Export] private FirstStart _startWindow;
 	[Export] private MatchmakerWindow _matchamkerWindow;
 	[Export] private OrchestratorWindow _orchestratorWindow;
+	[Export] private HeroesWindow _heroesWindow;
 	[Export] private ConfigurationSerializer _serializer;
 
 
@@ -37,8 +38,11 @@ public partial class Main : Control
 		_matchamkerWindow.OnSaveToJson += _serializer.SaveChanges;
 		_orchestratorWindow.OnSaveToJson += _serializer.SaveChanges;
 
+
+		// WINDOWS =======================
 		_windows[EngineWindow.Matchmaker] = _matchamkerWindow;
 		_windows[EngineWindow.Orchestrator] = _orchestratorWindow;
+		_windows[EngineWindow.Heroes] = _heroesWindow;
 
 		foreach(var pair in _windows)
 		{

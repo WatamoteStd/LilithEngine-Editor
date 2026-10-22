@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://bpabhmqsrfn5p"]
+
+[ext_resource type="Script" uid="uid://nfet4e2goecv" path="res://Scenes/Windows/Heroes/HeroesWindow.cs" id="1_vll73"]
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="2_2r61r"]
+[ext_resource type="VideoStream" uid="uid://c0krp5fkbq1xb" path="res://Assets/Video/HeroesWindow/2cfcd73cb2de4ab3c798883256ca0335_720w.ogv" id="2_tnsp0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.101960786, 0.3254902, 0.5529412, 0.43529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
+bg_color = Color(0.073071696, 0.3122142, 0.6318819, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.10947416, 0.3870205, 0.75961316, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnsp0"]
+bg_color = Color(0.06282725, 0.28431192, 0.57777524, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.15091962, 0.44934452, 0.85559475, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8qcf"]
+bg_color = Color(0.08466282, 0.3373725, 0.6737895, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14675555, 0.4440357, 0.84801, 1)
+border_blend = true
+
+[node name="HeroesWindow" type="PanelContainer" unique_id=1290469456]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vll73")
+
+[node name="Background" type="Panel" parent="." unique_id=1024858981]
+layout_mode = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Background" unique_id=532375553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_tnsp0")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1213553991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.81960785)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1464400067]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="VBoxContainer" unique_id=563167882]
+layout_mode = 2
+theme_override_constants/separation = -10
+
+[node name="Title" type="Label" parent="VBoxContainer/Title" unique_id=955232039]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7870467, 0.8323196, 0.8965954, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_2r61r")
+theme_override_font_sizes/font_size = 34
+text = "LILITH ENGINE EDITOR"
+
+[node name="Title2" type="Label" parent="VBoxContainer/Title" unique_id=497011358]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.520289, 0.5469936, 0.5967878, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_2r61r")
+theme_override_font_sizes/font_size = 28
+text = "HEROES CREATOR"
+
+[node name="Header" type="PanelContainer" parent="VBoxContainer" unique_id=1935275912]
+custom_minimum_size = Vector2(2, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+
+[node name="Content" type="HBoxContainer" parent="VBoxContainer/Header" unique_id=1478657527]
+layout_mode = 2
+
+[node name="CurHero" type="HBoxContainer" parent="VBoxContainer/Header/Content" unique_id=870485654]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Header/Content/CurHero" unique_id=476401445]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.7608361, 0.7885768, 0.8505066, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_2r61r")
+theme_override_font_sizes/font_size = 16
+text = "CURRENT HERO"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Header/Content/CurHero" unique_id=451942649]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_6u82b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tnsp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g8qcf")
+alignment = 1
+item_count = 3
+popup/item_0/text = "Create new +"
+popup/item_0/id = 2
+popup/item_1/text = "Hero 1"
+popup/item_1/id = 0
+popup/item_2/text = "Hero 2"
+popup/item_2/id = 1

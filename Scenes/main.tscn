@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cqbr8bcklkwxp" path="res://Scenes/Windows/SelectWindowTab.tscn" id="5_6bp64"]
 [ext_resource type="Texture2D" uid="uid://cgjxndrmwmk8q" path="res://Assets/Icons/MenuIcon.png" id="5_21xkr"]
 [ext_resource type="PackedScene" uid="uid://drfbcyh1b8gxx" path="res://Scenes/Windows/OrchestratorWindow.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bpabhmqsrfn5p" path="res://Scenes/Windows/Heroes/HeroesWindow.tscn" id="6_hptm8"]
 [ext_resource type="Texture2D" uid="uid://cwsyxy3bp3gkk" path="res://Assets/Icons/MenuIcon_Hover.png" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://dj67wks17v2dt" path="res://Assets/Icons/MenuIcon_Pressed.png" id="7_ynf5e"]
 
-[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_menuButton", "_selectWindowTab", "_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_serializer")]
+[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_menuButton", "_selectWindowTab", "_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_heroesWindow", "_serializer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +24,7 @@ _selectWindowTab = NodePath("SelectWindowTab")
 _startWindow = NodePath("FirstInit")
 _matchamkerWindow = NodePath("MatchmakerWindow")
 _orchestratorWindow = NodePath("OrchestratorWindow")
+_heroesWindow = NodePath("HeroesWindow")
 _serializer = NodePath("ConfigSaver")
 
 [node name="ConfigSaver" type="Node" parent="." unique_id=1954809182]
@@ -33,6 +35,10 @@ visible = false
 layout_mode = 1
 
 [node name="OrchestratorWindow" parent="." unique_id=2008096676 instance=ExtResource("5_kry3j")]
+layout_mode = 1
+
+[node name="HeroesWindow" parent="." unique_id=1290469456 instance=ExtResource("6_hptm8")]
+visible = false
 layout_mode = 1
 
 [node name="SelectWindowTab" parent="." unique_id=1140636163 instance=ExtResource("5_6bp64")]
