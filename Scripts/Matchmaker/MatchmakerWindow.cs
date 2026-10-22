@@ -5,6 +5,8 @@ using System.Text.Json;
 
 public partial class MatchmakerWindow : PanelContainer
 {
+
+	public event Action<MatchmakerSettingsStruct> OnSaveToJson;
 	
 	[Export] private Button _saveButton;
 	[Export] private LineEdit _poolUpscale;
@@ -25,25 +27,8 @@ public partial class MatchmakerWindow : PanelContainer
 		int.TryParse(_mmrDiapasone.Text, out int mmrDiapasone);
 		bool isLimited = _limited.ButtonPressed;
 
-		var config = new
-		{
-			pool_upscale_time = poolUpscaleTime,
-			mmr_upscale = mmrUpscale,
-			mmr_diapasone = mmrDiapasone,
-			limited = isLimited
-		};
-
-		string dirPath = Path.Combine(Cache.Instance.WorkPath, "Backend", "configs");
-		Directory.CreateDirectory(dirPath);
-
-		string filePath = Path.Combine(dirPath, "matchmaker.json");
-		
-		var options = new JsonSerializerOptions { WriteIndented = true };
-		string jsonString = JsonSerializer.Serialize(config, options);
-
-		File.WriteAllText(filePath, jsonString);
-		GD.Print($"[Matchmaker] Config saved to: {filePath}");
-
+		var config = new MatchmakerSettingsStruct(poolUpscaleTime, mmrUpscale, mmrDiapasone, isLimited);
+		OnSaveToJson?.Invoke(config);
 
 	}
 

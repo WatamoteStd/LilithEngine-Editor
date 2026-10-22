@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://drfbcyh1b8gxx"]
+
+[ext_resource type="Script" uid="uid://dp63go646ml03" path="res://Scripts/Orchestrator/OrchestratorWindow.cs" id="1_a28vh"]
+[ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="2_aoc66"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
+bg_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
+
+[node name="OrchestratorWindow" type="PanelContainer" unique_id=2008096676]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("1_a28vh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1520808428]
+layout_mode = 2
+
+[node name="Title" type="VBoxContainer" parent="VBoxContainer" unique_id=570568863]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Title" unique_id=225090685]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8665462, 0.86655676, 0.877109, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_aoc66")
+theme_override_font_sizes/font_size = 34
+text = "LILITH ENGINE EDITOR"
+
+[node name="Title2" type="Label" parent="VBoxContainer/Title" unique_id=1263786499]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.5547279, 0.5460517, 0.52434534, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_aoc66")
+theme_override_font_sizes/font_size = 34
+text = "ORCHESTRATOR"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1351567452]
+layout_mode = 2
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=1717217123]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 10

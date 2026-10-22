@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://lq6187k1xn0t"]
 
-[ext_resource type="Script" uid="uid://cd8epjaopq51j" path="res://Scripts/MatchmakerWindow.cs" id="1_dq43k"]
+[ext_resource type="Script" uid="uid://cd8epjaopq51j" path="res://Scripts/Matchmaker/MatchmakerWindow.cs" id="1_dq43k"]
 [ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_xiphy"]
 [ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="2_275ln"]
 [ext_resource type="FontFile" uid="uid://obsv35xo0cxy" path="res://Assets/Fonts/FiraCode-Bold.ttf" id="3_dq43k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
-bg_color = Color(0.16876125, 0.15656361, 0.10253603, 1)
+bg_color = Color(0.14859176, 0.1566456, 0.16786414, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
 bg_color = Color(0.105882354, 0.09803922, 0.05882353, 1)

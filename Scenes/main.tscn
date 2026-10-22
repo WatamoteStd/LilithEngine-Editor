@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://7o6e0pn1chgs"]
 
 [ext_resource type="Script" uid="uid://crd2og7xlrtbt" path="res://Scripts/Main.cs" id="1_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://be1byqc8qvjbp" path="res://Scenes/FirstStart.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://lq6187k1xn0t" path="res://Scenes/matchmakerWindow.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://be1byqc8qvjbp" path="res://Scenes/Windows/FirstStart.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://lq6187k1xn0t" path="res://Scenes/Windows/matchmakerWindow.tscn" id="3_8gbba"]
 
 [node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_startWindow")]
 layout_mode = 3
