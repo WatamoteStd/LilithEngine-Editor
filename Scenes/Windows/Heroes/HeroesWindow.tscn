@@ -40,6 +40,48 @@ border_width_bottom = 2
 border_color = Color(0.14675555, 0.4440357, 0.84801, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqy68"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.3510353, 0.3551179, 0.37860158, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on71p"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.30588233, 0.30943897, 0.3308035, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ajv5"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.39511603, 0.39931768, 0.42449346, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
+border_blend = true
+shadow_size = 1
+
 [node name="HeroesWindow" type="PanelContainer" unique_id=1290469456]
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,7 +113,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.07058824, 0.07058824, 0.07058824, 0.81960785)
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.7372549)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1464400067]
 layout_mode = 2
@@ -137,6 +179,19 @@ popup/item_1/id = 0
 popup/item_2/text = "Hero 2"
 popup/item_2/id = 1
 
+[node name="Save" type="Button" parent="VBoxContainer/Header/Content" unique_id=1654207543]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.7990741, 0.79907465, 0.7990742, 1)
+theme_override_fonts/font = ExtResource("2_2r61r")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqy68")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_on71p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ajv5")
+text = "SAVE HERO"
+
 [node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=1671325864]
 layout_mode = 2
 size_flags_vertical = 3
@@ -154,3 +209,4 @@ layout_mode = 2
 
 [node name="HeroiList_Stats" parent="VBoxContainer/Content/Container" unique_id=780213827 instance=ExtResource("5_yqy68")]
 layout_mode = 2
+size_flags_horizontal = 0

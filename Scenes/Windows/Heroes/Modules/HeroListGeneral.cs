@@ -2,7 +2,10 @@ using Godot;
 using System;
 
 public partial class HeroListGeneral : PanelContainer
-{   
+{  
+
+	[Export] private LineEdit _serverId;
+	[Export] private LineEdit _name;
 	
 	[ExportCategory("Model Size")]
 	[Export] private ModelSizeAdvensed _modelSizeTab;
@@ -53,6 +56,13 @@ public partial class HeroListGeneral : PanelContainer
 			break;
 
 		}
+
+	}
+
+	public void GetData(ref GeneralStatsStruct data)
+	{
+		
+		_modelSizeTab.GetFields(ref data);
 
 	}
 

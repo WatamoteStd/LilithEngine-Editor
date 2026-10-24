@@ -8,6 +8,7 @@ public partial class Main : Control
 	public enum EngineWindow : byte { Matchmaker, Orchestrator, Heroes};
 	public EngineWindow CurrentWindow;
 	private bool _isMenuOpen = false;
+	[Export] private Console _console;
 
 	[Export] private TextureButton _menuButton;
 	[Export] private SelectWindowTab _selectWindowTab;
@@ -58,6 +59,17 @@ public partial class Main : Control
 		_isMenuOpen = false;
 
 	}
+
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		
+		if(@event.IsActionPressed("ConsoleAction"))
+		{
+			_console.Visible = !_console.Visible;
+		}
+
+	}
+
 
 	private void WindowSwitcherAction()
 	{

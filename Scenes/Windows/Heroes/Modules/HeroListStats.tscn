@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_cylwj"]
 [ext_resource type="FontFile" uid="uid://ha0pyjwvwwhv" path="res://Assets/Fonts/FiraCode-Light.ttf" id="2_m1l2r"]
 [ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="3_r4y5p"]
+[ext_resource type="Texture2D" uid="uid://dpd8y5ttote5q" path="res://Assets/Icons/HeroesWindow/HealthIcon.png" id="3_tou5w"]
 [ext_resource type="Theme" uid="uid://bltki6hck13wx" path="res://Assets/Styles/MainTheme.tres" id="4_m1l2r"]
 [ext_resource type="Script" uid="uid://gddkineisuan" path="res://Scripts/Utils/AwarnessLineEdit.cs" id="4_tou5w"]
 
@@ -11,7 +12,7 @@ content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
-bg_color = Color(0.2509804, 0.30980393, 0.39607844, 0.5803922)
+bg_color = Color(0.2509804, 0.30980393, 0.39607844, 0.4392157)
 border_color = Color(0.2353374, 0.3768562, 0.5457457, 1)
 border_blend = true
 shadow_size = 2
@@ -117,13 +118,23 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Health" unique_id=999865752]
+[node name="TitleBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Health" unique_id=381132401]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/Health/TitleBox" unique_id=999865752]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
 theme_override_fonts/font = ExtResource("2_m1l2r")
 theme_override_font_sizes/font_size = 15
 text = "Health"
 horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="ScrollContainer/VBoxContainer/Health/TitleBox" unique_id=137059380]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("3_tou5w")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Health" type="LineEdit" parent="ScrollContainer/VBoxContainer/Health" unique_id=1200521352]
 custom_minimum_size = Vector2(140, 0)

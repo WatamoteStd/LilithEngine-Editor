@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bpabhmqsrfn5p" path="res://Scenes/Windows/Heroes/HeroesWindow.tscn" id="6_hptm8"]
 [ext_resource type="Texture2D" uid="uid://cwsyxy3bp3gkk" path="res://Assets/Icons/MenuIcon_Hover.png" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://dj67wks17v2dt" path="res://Assets/Icons/MenuIcon_Pressed.png" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ceiq2ab8yhjjo" path="res://Scenes/console.tscn" id="11_d1ilt"]
 
-[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_menuButton", "_selectWindowTab", "_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_heroesWindow", "_serializer")]
+[node name="Control" type="Control" unique_id=1349123055 node_paths=PackedStringArray("_console", "_menuButton", "_selectWindowTab", "_startWindow", "_matchamkerWindow", "_orchestratorWindow", "_heroesWindow", "_serializer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bo1nx")
+_console = NodePath("Console")
 _menuButton = NodePath("OpenMenu")
 _selectWindowTab = NodePath("SelectWindowTab")
 _startWindow = NodePath("FirstInit")
@@ -75,3 +77,11 @@ stretch_mode = 4
 [node name="FirstInit" parent="." unique_id=190634973 instance=ExtResource("1_jjgbg")]
 visible = false
 layout_mode = 1
+
+[node name="Console" parent="." unique_id=816127774 instance=ExtResource("11_d1ilt")]
+visible = false
+layout_mode = 1
+offset_left = -425.0
+offset_top = -225.0
+offset_right = 425.0
+offset_bottom = 225.0
