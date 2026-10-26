@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://buo3y4rnxce8e"]
 
 [ext_resource type="FontFile" uid="uid://do8pcyh47d0hl" path="res://Assets/Fonts/FiraCode-Medium.ttf" id="1_cylwj"]
+[ext_resource type="Script" uid="uid://c6xyysk1y37p8" path="res://Scenes/Windows/Heroes/Modules/HeroListStats.cs" id="1_tou5w"]
 [ext_resource type="FontFile" uid="uid://ha0pyjwvwwhv" path="res://Assets/Fonts/FiraCode-Light.ttf" id="2_m1l2r"]
 [ext_resource type="FontFile" uid="uid://c15rey7a7ia04" path="res://Assets/Fonts/FiraCode-Regular.ttf" id="3_r4y5p"]
 [ext_resource type="Texture2D" uid="uid://dpd8y5ttote5q" path="res://Assets/Icons/HeroesWindow/HealthIcon.png" id="3_tou5w"]
 [ext_resource type="Theme" uid="uid://bltki6hck13wx" path="res://Assets/Styles/MainTheme.tres" id="4_m1l2r"]
-[ext_resource type="Script" uid="uid://gddkineisuan" path="res://Scripts/Utils/AwarnessLineEdit.cs" id="4_tou5w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83fg3"]
 content_margin_left = 5.0
@@ -64,18 +64,7 @@ border_width_bottom = 1
 border_color = Color(0.4465083, 0.5445414, 0.67016596, 1)
 border_blend = true
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u82b"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.105882354, 0.12941177, 0.16078432, 1)
-border_width_top = 1
-border_width_right = 1
-border_color = Color(0.3919787, 0.5210034, 0.62861705, 1)
-border_blend = true
-
-[node name="HeroiList_Stats" type="PanelContainer" unique_id=22522576]
+[node name="HeroiList_Stats" type="PanelContainer" unique_id=22522576 node_paths=PackedStringArray("_healthLine", "_healthRegenLine", "_manaLine", "_manaRegenLine", "_armorLine", "_moveSpeedLine", "_damageLine", "_BASLine", "_attackRangeLine", "_attackType")]
 custom_minimum_size = Vector2(350, 500)
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,6 +78,17 @@ offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_83fg3")
+script = ExtResource("1_tou5w")
+_healthLine = NodePath("ScrollContainer/VBoxContainer/Health/Health")
+_healthRegenLine = NodePath("ScrollContainer/VBoxContainer/HealthRegen/HealthRegen")
+_manaLine = NodePath("ScrollContainer/VBoxContainer/Mana/mana")
+_manaRegenLine = NodePath("ScrollContainer/VBoxContainer/ManaRegen/manaRegen")
+_armorLine = NodePath("ScrollContainer/VBoxContainer/Armor/Armor")
+_moveSpeedLine = NodePath("ScrollContainer/VBoxContainer/MoveSpeed/MoveSpeed")
+_damageLine = NodePath("ScrollContainer/VBoxContainer/Damage/Damage")
+_BASLine = NodePath("ScrollContainer/VBoxContainer/AttackSpeed/AttackSpeed")
+_attackRangeLine = NodePath("ScrollContainer/VBoxContainer/AttackRange/AttackRange")
+_attackType = NodePath("ScrollContainer/VBoxContainer/AttackType/AttackType")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=936398762]
 layout_mode = 2
@@ -374,99 +374,3 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 10
 theme = ExtResource("4_m1l2r")
-
-[node name="ModelSizeAdvensed" type="PanelContainer" parent="ScrollContainer/VBoxContainer" unique_id=1846092719]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6u82b")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed" unique_id=1866948949]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Header" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=476264181]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=175661385]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.57002485, 0.6276293, 0.7046362, 1)
-theme_override_fonts/font = ExtResource("2_m1l2r")
-theme_override_font_sizes/font_size = 14
-text = "Advanced Model Options"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/Header" unique_id=821622118]
-layout_mode = 2
-
-[node name="ModelRad" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=870277957 node_paths=PackedStringArray("_lineEdit", "_label")]
-layout_mode = 2
-theme_override_constants/separation = 10
-script = ExtResource("4_tou5w")
-_lineEdit = NodePath("SizeR")
-_label = NodePath("hint")
-_hintShowValue = 1
-_warningShowValue = 3
-_criticalShowValue = 6
-_warningMessage = "May make some troubles"
-
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=668212355]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
-theme_override_fonts/font = ExtResource("2_m1l2r")
-theme_override_font_sizes/font_size = 12
-text = "Radius (F)"
-horizontal_alignment = 1
-
-[node name="SizeR" type="LineEdit" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=1103282129]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r4y5p")
-theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
-alignment = 1
-max_length = 3
-
-[node name="hint" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelRad" unique_id=2023485984]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_m1l2r")
-theme_override_font_sizes/font_size = 11
-horizontal_alignment = 1
-
-[node name="ModelHei" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer" unique_id=1421650990 node_paths=PackedStringArray("_lineEdit", "_label")]
-layout_mode = 2
-theme_override_constants/separation = 10
-script = ExtResource("4_tou5w")
-_lineEdit = NodePath("SizeH")
-_label = NodePath("hint")
-_hintShowValue = 1
-_warningShowValue = 3
-_criticalShowValue = 6
-_warningMessage = "May make some troubles"
-
-[node name="Title" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1130687324]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.8464264, 0.8927789, 0.92923737, 1)
-theme_override_fonts/font = ExtResource("2_m1l2r")
-theme_override_font_sizes/font_size = 12
-text = "Height (F)"
-horizontal_alignment = 1
-
-[node name="SizeH" type="LineEdit" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=1615405600]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_r4y5p")
-theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_urodu")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q76wn")
-alignment = 1
-max_length = 3
-
-[node name="hint" type="Label" parent="ScrollContainer/VBoxContainer/ModelSizeAdvensed/VBoxContainer/ModelHei" unique_id=592215464]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_m1l2r")
-theme_override_font_sizes/font_size = 11
-horizontal_alignment = 1

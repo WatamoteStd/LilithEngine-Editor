@@ -38,6 +38,7 @@ public partial class Main : Control
 
 		_matchamkerWindow.OnSaveToJson += _serializer.SaveChanges;
 		_orchestratorWindow.OnSaveToJson += _serializer.SaveChanges;
+		_heroesWindow.OnSaveToJson += _serializer.SaveChanges;
 
 
 		// WINDOWS =======================

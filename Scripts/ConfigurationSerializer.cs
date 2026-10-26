@@ -14,7 +14,7 @@ public partial class ConfigurationSerializer : Node
 			WriteIndented = true
 		};
 
-		string dir = Path.Combine(Cache.Instance.WorkPath, "Backend", "configs", "editor");
+		string dir = Path.Combine(Cache.Instance.WorkPath, "bin", "Backend", "configs", "editor");
 		Directory.CreateDirectory(dir);
 
 		string filePath = Path.Combine(dir, "matchmaker.json");
@@ -30,7 +30,7 @@ public partial class ConfigurationSerializer : Node
 		
 		var settings = new JsonSerializerOptions { WriteIndented = true };
 
-		string dir = Path.Combine(Cache.Instance.WorkPath, "Backend", "configs", "editor");
+		string dir = Path.Combine(Cache.Instance.WorkPath, "bin", "Backend", "configs", "editor");
 		Directory.CreateDirectory(dir);
 
 		string filePath = Path.Combine(dir, "orchestrator.json");
@@ -39,6 +39,23 @@ public partial class ConfigurationSerializer : Node
 		File.WriteAllText(filePath, jsonText);
 
 		GD.Print($"[ConfigurationSerializer] Orchestrator settings saved.");
+
+	}
+
+	public void SaveChanges(HeroStruct config)
+	{
+		
+		var settings = new JsonSerializerOptions { WriteIndented = true };
+
+		string dir = Path.Combine(Cache.Instance.WorkPath, "gamedata", "heroes");
+		if(!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+		string filePath = Path.Combine(dir, $"{config.Name}.json");
+
+		var jsonText = JsonSerializer.Serialize(config, settings);
+		File.WriteAllText(filePath, jsonText);
+
+		GD.Print($"[ConfigurationSerializer] Hero saved.");
 
 	}
 	

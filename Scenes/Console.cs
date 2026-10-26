@@ -56,7 +56,7 @@ public partial class Console : PanelContainer
 
 		bool useNats = args.Contains("-nats");
 
-		if (target == "mm")
+		if (target == "mm" || target == "matchmaker")
 		{
 			_history.AppendText("\nStarting matchmaker..");
 			StartMatchmaker();
@@ -65,6 +65,11 @@ public partial class Console : PanelContainer
 				_history.AppendText("\nNATS starting...");
 				StartNats();
 			}
+		}
+		else if (target == "nats")
+		{
+			_history.AppendText("\nNATS starting...");
+			StartNats();
 		}
 
 	}

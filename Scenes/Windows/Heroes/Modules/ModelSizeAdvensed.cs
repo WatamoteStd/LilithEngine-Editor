@@ -30,20 +30,16 @@ public partial class ModelSizeAdvensed : PanelContainer
 		_heightEdit.Editable = false;
 	}
 
-	public void GetFields(ref GeneralStatsStruct data)
+	public void GetFields(ref HeroStruct data)
 	{
+		float basicRad = 1.0f;
+		float basicHei = 1.0f;
 		
-		if (!float.TryParse(_radiusEdit.Text, out var rad))
-		{
-			return;
-		}
-		if (!float.TryParse(_heightEdit.Text, out float hei))
-		{
-			return;
-		}
+		if (float.TryParse(_radiusEdit.Text, out basicRad))
+		if (float.TryParse(_heightEdit.Text, out basicHei))
 
-		data.Radius = rad;
-		data.Heigth = hei;
+		data.Radius = basicRad;
+		data.Height = basicHei;
 
 	}
 

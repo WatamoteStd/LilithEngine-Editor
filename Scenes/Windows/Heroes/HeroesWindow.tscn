@@ -82,13 +82,16 @@ border_color = Color(0.080778725, 0.0750907, 0.07793493, 1)
 border_blend = true
 shadow_size = 1
 
-[node name="HeroesWindow" type="PanelContainer" unique_id=1290469456]
+[node name="HeroesWindow" type="PanelContainer" unique_id=1290469456 node_paths=PackedStringArray("_generalTab", "_statsTab", "_saveChangesButton")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vll73")
+_generalTab = NodePath("VBoxContainer/Content/Container/HeroiList_General")
+_statsTab = NodePath("VBoxContainer/Content/Container/HeroiList_Stats")
+_saveChangesButton = NodePath("VBoxContainer/Header/Content/Save")
 
 [node name="Background" type="Panel" parent="." unique_id=1024858981]
 layout_mode = 2
@@ -130,7 +133,7 @@ theme_override_colors/font_color = Color(0.7870467, 0.8323196, 0.8965954, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_2r61r")
 theme_override_font_sizes/font_size = 34
-text = "LILITH ENGINE EDITOR"
+text = "LILITH FRAMEWORK EDITOR"
 
 [node name="Title2" type="Label" parent="VBoxContainer/Title" unique_id=497011358]
 layout_mode = 2

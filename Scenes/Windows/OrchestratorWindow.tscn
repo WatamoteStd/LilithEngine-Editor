@@ -96,7 +96,7 @@ theme_override_colors/font_color = Color(0.8665462, 0.86655676, 0.877109, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_aoc66")
 theme_override_font_sizes/font_size = 34
-text = "LILITH ENGINE EDITOR"
+text = "LILITH FRAMEWORK EDITOR"
 
 [node name="Title2" type="Label" parent="VBoxContainer/Title" unique_id=1263786499]
 layout_mode = 2

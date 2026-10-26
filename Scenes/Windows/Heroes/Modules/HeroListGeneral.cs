@@ -4,7 +4,7 @@ using System;
 public partial class HeroListGeneral : PanelContainer
 {  
 
-	[Export] private LineEdit _serverId;
+	[Export] private Label _frameworkIdLabel;
 	[Export] private LineEdit _name;
 	
 	[ExportCategory("Model Size")]
@@ -59,10 +59,11 @@ public partial class HeroListGeneral : PanelContainer
 
 	}
 
-	public void GetData(ref GeneralStatsStruct data)
+	public void GetData(ref HeroStruct data)
 	{
 		
 		_modelSizeTab.GetFields(ref data);
+		data.Name = _name.Text;
 
 	}
 
