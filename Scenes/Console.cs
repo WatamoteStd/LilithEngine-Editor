@@ -37,6 +37,10 @@ public partial class Console : PanelContainer
 				_history.Clear();
 			break;
 
+			case "memory_drop_value":
+				HandleMemoryDrop(args);
+			break;
+
 			default:
 				_history.AppendText("\nUnknown Command");
 			break;
@@ -73,6 +77,24 @@ public partial class Console : PanelContainer
 		}
 
 	}
+	
+
+	private void HandleMemoryDrop(string[] args)
+	{
+		
+		if(args.Length == 0) return;
+		if(!ushort.TryParse(args[0], out ushort value))
+		{
+			_history.AppendText($"\nInvalid syntax. Waiting for: memory_drop_value [value]");
+			return;
+		}
+
+		Cache.Instance.MemoryDropValue = value;
+		_history.AppendText($"\nMemory Drop value changed to: {value}mb !");
+
+	}
+
+
 
 	private void StartNats()
 	{

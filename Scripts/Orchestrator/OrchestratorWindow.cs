@@ -23,7 +23,7 @@ public partial class OrchestratorWindow : PanelContainer, IEngineWindow
 		int.TryParse(_portsCount.Text, out int count);
 		int.TryParse(_startPort.Text, out int startPort);
 		
-		OrchestratorSettingsStruct settings = new OrchestratorSettingsStruct(count, startPort, _memoryLeakDrop.ToggleMode);
+		OrchestratorSettingsStruct settings = new OrchestratorSettingsStruct(count, startPort, _memoryLeakDrop.ToggleMode, Cache.Instance.MemoryDropValue);
 		OnSaveToJson?.Invoke(settings);
 	}
 

@@ -30,7 +30,7 @@ public partial class ConfigurationSerializer : Node
 		
 		var settings = new JsonSerializerOptions { WriteIndented = true };
 
-		string dir = Path.Combine(Cache.Instance.WorkPath, "bin", "Backend", "configs", "editor");
+		string dir = Path.Combine(Cache.Instance.WorkPath, "Backend", "configs", "editor");
 		Directory.CreateDirectory(dir);
 
 		string filePath = Path.Combine(dir, "orchestrator.json");
